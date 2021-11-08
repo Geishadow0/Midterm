@@ -12,9 +12,11 @@
 
     <ImageView
         android:id="@+id/imglogin"
-        android:layout_width="374dp"
+        android:layout_width="match_parent"
         android:layout_height="100dp"
+        android:contentDescription="icon"
         android:visibility="visible"
+
         tools:ignore="ImageContrastCheck"
         tools:srcCompat="@tools:sample/avatars[3]"
         tools:visibility="visible" />
