@@ -14,18 +14,12 @@ import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class MainActivity extends AppCompatActivity {
-    //Declaration EditTexts
+
     EditText editTextUsername;
     EditText editTextPassword;
-
-    //Declaration TextInputLayout
     TextInputLayout textInputLayoutUsername;
     TextInputLayout textInputLayoutPassword;
-
-    //Declaration Button
     Button buttonLogin;
-
-    //Declaration SqliteHelper
     SqliteHelper sqliteHelper;
 
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -37,35 +31,29 @@ public class MainActivity extends AppCompatActivity {
         initCreateAccountTextView();
         initViews();
 
-        //set click event of login button
+
         buttonLogin.setOnClickListener(view -> {
-            //check user input is correct or not
             if (validateUsername()&&validatePassword()) {
-                //got values from EditText fields
+
                 String Username = editTextUsername.getText().toString();
                 String Password = editTextPassword.getText().toString();
 
-                //Authenticate user
                 User currentUser = sqliteHelper.Authenticate(new User(null, Username, null, Password ));
 
-                //Check Authentication is succesful or not
                 if (currentUser != null) {
                     Snackbar.make(buttonLogin, "Succesfully Logged in!", Snackbar.LENGTH_LONG).show();
 
-                    //User Logged in Successfully Launch You home Screen Activity
                     Intent intent = new Intent(MainActivity.this, HomeActivity.class);
                     intent.putExtra("name",Username);
                     startActivity(intent);
                     finish();
                 }
                 else {
-                    //user loggen in Failed
                     Snackbar.make(buttonLogin, " Failed to log in, please try again", Snackbar.LENGTH_LONG).show();
                 }
             }
         });
     }
-    //this method used to set Create Account textview text and click event
     @RequiresApi(api = Build.VERSION_CODES.N)
     private void initCreateAccountTextView() {
         TextView textViewCreateAccount = findViewById(R.id.textViewCreateAccount);
@@ -76,7 +64,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    //this method is used to connect XML views to its Objects
     private void initViews() {
         editTextUsername = findViewById(R.id.editTextUsername);
         editTextPassword = findViewById(R.id.editTextPassword);
@@ -85,7 +72,6 @@ public class MainActivity extends AppCompatActivity {
         buttonLogin = findViewById(R.id.buttonLogin);
     }
 
-    //this method is for handling fromHtml method deprecation
     @RequiresApi(api = Build.VERSION_CODES.N)
     private static Spanned fromhtml() {
         Spanned result;
@@ -94,14 +80,11 @@ public class MainActivity extends AppCompatActivity {
         return result;
     }
 
-    //this method is used to validate input given by user
     private boolean validateUsername() {
         boolean validuser;
 
-        //get values from Edittext fields
         String Username = editTextUsername.getText().toString();
 
-        //Handling validation for UserName field
         if (Username.isEmpty()) {
             validuser = false;
             textInputLayoutUsername.setError("Please enter valid username!");
@@ -117,12 +100,9 @@ public class MainActivity extends AppCompatActivity {
         }
         return validuser;
     }
-
-    //Handling validation for password field
     private boolean validatePassword(){
         boolean validpass;
 
-        //Get values from EditText fields
         String Password = editTextPassword.getText().toString();
 
         //Handling validation for Password field

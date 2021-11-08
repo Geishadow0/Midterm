@@ -2,6 +2,7 @@ package com.school.midterm;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.content.Intent;
 import android.view.View;
@@ -13,6 +14,7 @@ import java.text.BreakIterator;
 public class HomeActivity extends AppCompatActivity {
 
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
