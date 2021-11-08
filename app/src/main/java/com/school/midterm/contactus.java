@@ -32,7 +32,7 @@ public class contactus extends AppCompatActivity implements View.OnClickListener
                 startActivity(tlp);
                 break;
             case R.id.email_btn:
-                Intent emailIntent=new Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:"+"president@whitehouse.gov"));
+                Intent emailIntent=new Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:"+"midterm.project@mail.com"));
 
                 try{
                     startActivity(Intent.createChooser(emailIntent,"Choose.."));
