@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity">
+
+    <TextView
+        android:id="@+id/contact"
+        android:layout_width="94dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="280dp"
+        android:onClick="button_contact"
+        android:text="@string/texthome_con"
+        android:textAlignment="textEnd"
+        app:layout_constraintBottom_toTopOf="@id/buttonlogout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.011" />
+
+    <TextView
+        android:id="@+id/Namaview"
+        android:layout_width="169dp"
+        android:layout_height="34dp"
+        android:text="@string/hello"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@id/buttonlogout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.011" />
+
+    <Button
+        android:id="@+id/buttonlogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="42dp"
+        android:text="@string/logout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/_dynamic"
+        tools:ignore="UnknownId" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="390dp"
+        android:layout_height="720dp"
+        android:layout_marginEnd="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Namaview"
+        tools:ignore="SpeakableTextPresentCheck">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/idCardView1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="10dp"
+                android:layout_weight="4"
+                android:paddingTop="30dp"
+                android:paddingBottom="30dp"
+                app:cardCornerRadius="4dp">
+
+                <LinearLayout
+                    android:layout_width="398dp"
+                    android:layout_height="359dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imagebook1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:contentDescription="@string/komi"
+                        android:onClick="button_komi"
+                        app:srcCompat="@drawable/imgkomi"
+                        tools:ignore="SpeakableTextPresentCheck,DuplicateSpeakableTextCheck" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textbook1"
+                            android:layout_width="186dp"
+                            android:layout_height="66dp"
+                            android:text="@string/book1"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/textdesc1.1"
+                            android:layout_width="186dp"
+                            android:layout_height="193dp"
+                            android:text="@string/desc1"
+                            tools:text="@string/desc1" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/idCardView2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="10dp"
+                android:layout_weight="4"
+                android:paddingTop="30dp"
+                android:paddingBottom="30dp"
+                app:cardCornerRadius="4dp">
+
+                <LinearLayout
+                    android:layout_width="398dp"
+                    android:layout_height="359dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imagebook2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:contentDescription="@string/oniichan"
+                        android:onClick="button_onii"
+                        app:srcCompat="@drawable/imgonii" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textbook2"
+                            android:layout_width="186dp"
+                            android:layout_height="52dp"
+                            android:text="@string/book2"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/textdesc2"
+                            android:layout_width="186dp"
+                            android:layout_height="292dp"
+                            android:text="@string/desc2" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/idCardView3"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="10dp"
+                android:layout_weight="4"
+                android:paddingTop="30dp"
+                android:paddingBottom="30dp"
+                app:cardCornerRadius="4dp">
+
+                <LinearLayout
+                    android:layout_width="398dp"
+                    android:layout_height="359dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imagebook3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:contentDescription="@string/shield"
+                        android:onClick="button_shield"
+                        app:srcCompat="@drawable/imgshield" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textbook3"
+                            android:layout_width="186dp"
+                            android:layout_height="52dp"
+                            android:text="@string/book3"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/textdesc3"
+                            android:layout_width="186dp"
+                            android:layout_height="292dp"
+                            android:text="@string/desc3"
+                            tools:text="@string/desc3" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/idCardView4"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="10dp"
+                android:layout_weight="4"
+                android:paddingTop="30dp"
+                android:paddingBottom="30dp"
+                app:cardCornerRadius="4dp">
+
+                <LinearLayout
+                    android:layout_width="398dp"
+                    android:layout_height="359dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imagebook4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:contentDescription="@string/tower"
+                        android:onClick="button_tower"
+                        app:srcCompat="@drawable/imgtower" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textbook4"
+                            android:layout_width="186dp"
+                            android:layout_height="52dp"
+                            android:text="@string/book4"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/textdesc4"
+                            android:layout_width="186dp"
+                            android:layout_height="292dp"
+                            android:text="@string/desc4" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/idCardView5"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="10dp"
+                android:layout_weight="4"
+                android:paddingTop="30dp"
+                android:paddingBottom="30dp"
+                app:cardCornerRadius="4dp">
+
+                <LinearLayout
+                    android:layout_width="398dp"
+                    android:layout_height="359dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imagebook5"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:contentDescription="@string/mahouka"
+                        android:onClick="button_mahouka"
+                        app:srcCompat="@drawable/imgmahouka" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textbook5"
+                            android:layout_width="186dp"
+                            android:layout_height="52dp"
+                            android:text="@string/book5"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/textdesc5"
+                            android:layout_width="186dp"
+                            android:layout_height="292dp"
+                            android:text="@string/desc5"
+                            tools:text="@string/desc5" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

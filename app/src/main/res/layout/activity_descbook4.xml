@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="390dp"
+    android:layout_height="831dp"
+    tools:ignore="MissingConstraints"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="-1dp"
+    tools:context=".descbook4">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/idCardView1"
+            android:layout_width="366dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="4"
+            android:paddingTop="30dp"
+            android:paddingBottom="30dp"
+            app:cardCornerRadius="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/booktitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/book4"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="266dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imgdesc1"
+                        android:layout_width="302dp"
+                        android:layout_height="263dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/imgtower" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="264dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/score"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="30dp"
+                            android:paddingTop="40dp"
+                            android:text="@string/score"
+                            android:textColor="#DD2C00" />
+
+                        <TextView
+                            android:id="@+id/scoreval"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="20dp"
+                            android:paddingTop="20dp"
+                            android:paddingBottom="5dp"
+                            android:text="@string/book4score" />
+
+                        <TextView
+                            android:id="@+id/user"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="20dp"
+                            android:text="@string/book4user"
+                            android:textAlignment="textStart" />
+
+                        <TextView
+                            android:id="@+id/rank"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="30dp"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:text="@string/rank"
+                            android:textColor="#DD2C00" />
+
+                        <TextView
+                            android:id="@+id/rankval"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="20dp"
+                            android:paddingBottom="5dp"
+                            android:text="@string/rank4" />
+
+                        <TextView
+                            android:id="@+id/pop"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="30dp"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:text="@string/pop"
+                            android:textColor="#DD2C00" />
+
+                        <TextView
+                            android:id="@+id/popval"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="20dp"
+                            android:paddingTop="5dp"
+                            android:text="@string/book4pop" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="214dp"
+                    android:orientation="horizontal">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="366dp"
+                        android:layout_height="216dp">
+
+                        <TextView
+                            android:id="@+id/inf"
+                            android:layout_width="154dp"
+                            android:layout_height="28dp"
+                            android:layout_marginTop="28dp"
+                            android:text="@string/information"
+                            android:textAlignment="textStart"
+                            android:textSize="20sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.058"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <LinearLayout
+                            android:id="@+id/linearLayout"
+                            android:layout_width="322dp"
+                            android:layout_height="140dp"
+                            android:layout_marginTop="20dp"
+                            android:orientation="vertical"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.075"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/inf">
+
+                            <TextView
+                                android:id="@+id/type1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="10dp"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="5dp"
+                                android:text="@string/type4" />
+
+                            <TextView
+                                android:id="@+id/genre1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="10dp"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="5dp"
+                                android:text="@string/genre4" />
+
+                            <TextView
+                                android:id="@+id/authors1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="10dp"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="5dp"
+                                android:text="@string/author4" />
+
+                        </LinearLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/idCardView2"
+            android:layout_width="366dp"
+            android:layout_height="400dp"
+            android:layout_margin="10dp"
+            android:layout_weight="4"
+            android:paddingTop="30dp"
+            android:paddingBottom="50dp"
+            app:cardCornerRadius="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="283dp"
+                android:orientation="vertical"
+                android:paddingBottom="30dp">
+
+                <TextView
+                    android:id="@+id/synopsisname1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="Synopsis"
+                    android:textAlignment="textStart"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.058"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/synopsis1"
+                    android:layout_width="370dp"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="5dp"
+                    android:text="@string/synopsis4" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+</ScrollView>
+
+

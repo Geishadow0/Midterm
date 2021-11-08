@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:paddingTop="150dp"
+    android:background="@color/purple_200"
+    tools:context=".Register">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="374dp"
+        android:layout_height="100dp"
+        android:contentDescription="icon"
+        android:visibility="visible"
+
+        tools:ignore="ImageContrastCheck"
+        tools:srcCompat="@tools:sample/avatars[3]"
+        tools:visibility="visible" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutUsername"
+        android:layout_width="374dp"
+        android:layout_height="49dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextUsername"
+            android:layout_width="374dp"
+            android:layout_height="49dp"
+            android:hint="username"
+            tools:ignore="TextContrastCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutEmail"
+        android:layout_width="374dp"
+        android:layout_height="60dp"
+        android:paddingTop="10dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextEmail"
+            android:layout_width="374dp"
+            android:layout_height="49dp"
+            android:hint="email"
+            tools:ignore="TextContrastCheck,DuplicateSpeakableTextCheck" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutPassword"
+        android:layout_width="374dp"
+        android:layout_height="60dp"
+        android:paddingTop="10dp"
+        app:passwordToggleEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextPassword"
+            android:layout_width="374dp"
+            android:layout_height="49dp"
+            android:hint="password"
+            android:inputType="textPassword"
+            tools:ignore="TextContrastCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/buttonRegister"
+        android:layout_width="374dp"
+        android:layout_height="wrap_content"
+        android:text="register" />
+
+    <TextView
+        android:id="@+id/textViewLogin"
+        android:layout_width="372dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="back"
+        tools:ignore="TextContrastCheck" />
+</LinearLayout><?xml version="1.0" encoding="utf-8"?>

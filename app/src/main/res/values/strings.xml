@@ -1,0 +1,103 @@
+<resources>
+    <string name="app_name">Midterm</string>
+    <string name="book1">Komi-san wa Komyushou Desu.</string>
+    <string name="desc1">Komi-san is a beautiful and admirable girl that no one can take their eyes off of. Almost the whole school sees her as the cold beauty that is out of their league, but Tadano Hitohito knows the truth: she is just really bad at communicating with others.</string>
+    <string name="book2">Oniichan wa Oshimai!</string>
+    <string name="desc2">Mahiro Oyama was just a normal erotic-game loving dude… until he woke up one morning as a woman! Turns out his mad-scientist little sister, Mihari, tried out one of her new experiments on him…with a disastrous outcome, as far as Mahiro is concerned! But Mihari is as determined to study him as he is determined to go back to his shut-in, game-playing life, and one thing is for sure…life is going to get a whole lot weirder from here on out! </string>
+    <string name="book3">Tate no Yuusha no Nariagari</string>
+    <string name="desc3">Twenty-year-old otaku Naofumi Iwatani is mysteriously transported to the otherworldly kingdom of Melromarc. Appearing before the King, Naofumi and three other summoned individuals learn that they are each one of the Four Cardinal Heroes who are tasked with defeating the malicious "Waves of Catastrophe."</string>
+    <string name="book4">Tou no Kanri wo Shitemiyou</string>
+    <string name="desc4">Kosuke is killed by a truck, his soul is lost in a garden with two beautiful girls. The owner of the place will let him choose whether he will be reborn or summoned to another world, and he maintains the summons. In this new world, the main two girls who were created by the owner of the garden to help him find the mystery behind the world: a dungeon tower. Will he be able to become the owner of this tower and manage it?</string>
+    <string name="book5">Mahouka Koukou no Rettousei</string>
+    <string name="desc5">Magic is a product of neither legends nor fairy tales, but instead has become a technology of reality since a time unknown to people. Supernatural power became a technology systematized through magic, while magic became a technical skill. A "Supernatural Power User" became a "Magic Technician." Magic Technicians (in short, Magicians) are nurtured through Magic High Schools and Universities.
+</string>
+    <string name="oniichan">oniichan</string>
+    <string name="komi">Komi</string>
+    <string name="shield">shield</string>
+    <string name="tower">tower</string>
+    <string name="mahouka">mahouka</string>
+    <string name="hello">Hello, Username</string>
+
+    <string name="score">Score</string>
+    <string name="rank">Rank</string>
+    <string name="pop">Popularity</string>
+
+
+    <string name="book1score">8.29 / 10</string>
+    <string name="book2score">7.73 / 10</string>
+    <string name="book3score">7.91 / 10</string>
+    <string name="book4score">7.20</string>
+    <string name="book5score">7.78</string>
+
+    <string name="book1user">65,704 users</string>
+    <string name="book2user">2,773 users</string>
+    <string name="book3user">38,781 users</string>
+    <string name="book4user">1,199 users</string>
+    <string name="book5user">7,402 users</string>
+
+    <string name="book1pop">#26</string>
+    <string name="book2pop">N/A</string>
+    <string name="book3pop">#83</string>
+    <string name="book4pop">#3457</string>
+    <string name="book5pop">#790</string>
+
+    <string name="rank1">#281</string>
+    <string name="rank2">#1754</string>
+    <string name="rank3">#867</string>
+    <string name="rank4">#5173</string>
+    <string name="rank5">#1205</string>
+
+
+    <string name="type1">Type: Manga</string>
+    <string name="type2">Type: Manga</string>
+    <string name="type3">Type: Manga</string>
+    <string name="type4">Type: Manga</string>
+    <string name="type5">Type: Manga</string>
+
+    <string name="genre1"> Genre: Comedy </string>
+    <string name="genre2"> Genre: Comedy, Slice of life</string>
+    <string name="genre3"> Genre: Drama, Fantasy</string>
+    <string name="genre4"> Genre: Adventure, Fantasy</string>
+    <string name="genre5"> Genre: Supernatural, Sci-Fi</string>
+
+    <string name="author1">Authors: Oda, Tomohito (Story &amp; Art)</string>
+    <string name="author2">Authors: Nekotoufu (Story &amp; Art)</string>
+    <string name="author3">Authors: Aiya, Kyu (Art), Aneko, Yusagi (Story)</string>
+    <string name="author4">Authors: Soushuu (Story), Rune (Art), GuyO (Art)</string>
+    <string name="author5">Authors: Hayashi, Fumino (Story), Kitaumi, Tsuna (Art), Satou, Tsutomu (Story)</string>
+
+    <string name="synopsis1">It\'s Shouko Komi is first day at the prestigious Itan Private High School, and she has already risen to the status of the school is Madonna. With long black hair and a tall, graceful appearance, she captures the attention of anyone who comes across her. There\'s just one problem though—despite her popularity, Shouko is terrible at communicating with others.
+</string>
+    <string name="synopsis1.2">Hitohito Tadano is your average high school boy. With his life motto of "read the situation and make sure to stay away from trouble," he quickly finds that sitting next to Shouko has made him the enemy of everyone in his class! One day, knocked out by accident, Hitohito later wakes up to the sound of Shouko\'s "meow." He lies that he heard nothing, causing Shouko to run away. But before she can escape, Hitohito surmises that Shouko is not able to talk to others easily—in fact, she has never been able to make a single friend. Hitohito resolves to help Shouko with her goal of making one hundred friends so that she can overcome her communication disorder.</string>
+    <string name="synopsis2">Mahiro Oyama was just a normal erotic-game loving dude…until he woke up one morning as a woman! Turns out his mad-scientist little sister, Mihari, tried out one of her new experiments on him…with a disastrous outcome, as far as Mahiro\'s concerned! But Mihari is as determined to study him as he is determined to go back to his shut-in, game-playing life, and one thing\'s for sure…life is going to get a whole lot weirder from here on out!
+</string>
+
+    <string name="synopsis3">Twenty-year-old otaku Naofumi Iwatani is mysteriously transported to the otherworldly kingdom of Melromarc. Appearing before the King, Naofumi and three other summoned individuals learn that they are each one of the Four Cardinal Heroes who are tasked with defeating the malicious "Waves of Catastrophe."
+</string>
+    <string name="synopsis3.1">However, Naofumi is given only a measly shield and dubbed the "Shield Hero," the weakest of the Four Cardinal Heroes. Owing to his lack of power, none of the kingdom\'s mercenaries wish to aid him, except for the country\'s beautiful princess, Malty Melromarc. But Naofumi soon awakens the next day to find himself robbed of all his possessions and falsely accused of rape by Malty.
+</string>
+    <string name="synopsis3.2">Due to his status as a Cardinal Hero, Naofumi is not executed, but instead, his erroneous crimes are made public. Struggling to find hospitality, Naofumi buys a demi-human slave girl named Raphtalia to aid his endeavors, and embarks on a perilous journey to deliver retribution to those who ruined him, learning the secrets of this new world along the way.
+</string>
+
+    <string name="synopsis4">Kosuke is killed by a truck, his soul is lost in a garden with two beautiful girls. The owner of the place will let him choose whether he will be reborn or summoned to another world, and he maintains the summons. In this new world, the main two girls who were created by the owner of the garden to help him find the mystery behind the world: a dungeon tower. Will he be able to become the owner of this tower and manage it?
+</string>
+
+    <string name="synopsis5">"Magic" is a product of neither legends nor fairy tales. It has become a technology of reality for nearly a century. Various countries in the world are locked in a race in nurturing "Magicians."
+
+</string>
+    <string name="synopsis5.1">Shiba Tatsuya is an honors student without magic capability at First High School, a magic high school along with his sister who happens to the top student among the freshmen. What will happen to him, and how will he live his school life where he is one of the many reserves in the school looked down upon by the chosen magical students?
+</string>
+    <string name="information">Information</string>
+    <string name="synopsis">Synopsis</string>
+    <string name="contact_support">Contact Support</string>
+    <string name="email">Email</string>
+    <string name="use_the_button_bellow_to_get_in_touch_or_get_support_for_this_app_and_services">Use the button bellow to get in touch or get support for this app and services.</string>
+    <string name="phone">Phone</string>
+    <string name="more_contact_options">More contact options</string>
+    <string name="contact_us">Contact us!</string>
+    <string name="pobox">PO Box 6368 Rosemead CA 91770</string>
+    <string name="address">Address: 1600 Pennsylvania Ave NW, Washington, DC 20500–0003, United States</string>
+    <string name="texthome_con">Contact Us</string>
+    <string name="logout">Logout</string>
+
+</resources>
