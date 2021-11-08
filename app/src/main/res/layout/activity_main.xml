@@ -1,70 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center_horizontal"
-    android:paddingTop="150dp"
-    android:background="#acbbfe"
-    tools:context=".MainActivity">
+    android:id="@+id/constraint"
+    tools:context=".MainActivity"
+    style="@style/constraint">
 
-    <ImageView
-        android:id="@+id/imglogin"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:contentDescription="icon"
-        android:visibility="visible"
+        android:layout_height="match_parent"
+        android:layout_marginTop="4dp"
+        android:background="#acbbfe"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingTop="150dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:context=".MainActivity">
 
-        tools:ignore="ImageContrastCheck"
-        tools:srcCompat="@tools:sample/avatars[3]"
-        tools:visibility="visible" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayoutUsername"
-        android:layout_width="374dp"
-        android:layout_height="49dp">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editTextUsername"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutUsername"
             android:layout_width="374dp"
-            android:layout_height="49dp"
-            android:hint="username"
+            android:layout_height="49dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextUsername"
+                android:layout_width="374dp"
+                android:layout_height="49dp"
+                android:hint="username"
+                tools:ignore="TextContrastCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutPassword"
+            android:layout_width="374dp"
+            android:layout_height="60dp"
+            android:paddingTop="10dp"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextPassword"
+                android:layout_width="374dp"
+                android:layout_height="49dp"
+                android:ems="15"
+                android:hint="password"
+                android:inputType="textPassword"
+                tools:ignore="TextContrastCheck,TouchTargetSizeCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/buttonLogin"
+            android:layout_width="374dp"
+            android:layout_height="wrap_content"
+            android:hint="login"
+
             tools:ignore="TextContrastCheck" />
-    </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayoutPassword"
-        android:layout_width="374dp"
-        android:layout_height="60dp"
-        android:paddingTop="10dp"
-        app:passwordToggleEnabled="true">
+        <TextView
+            android:id="@+id/textViewCreateAccount"
+            android:layout_width="372dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="i don't have any account, create one"
+            android:textColor="#000000" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editTextPassword"
-            android:layout_width="374dp"
-            android:layout_height="49dp"
-            android:ems="15"
-            android:hint="password"
-            android:inputType="textPassword"
-            tools:ignore="TextContrastCheck,TouchTargetSizeCheck" />
-    </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/buttonLogin"
-        android:layout_width="374dp"
-        android:layout_height="wrap_content"
-        android:hint="login"
-
-        tools:ignore="TextContrastCheck" />
-
-    <TextView
-        android:id="@+id/textViewCreateAccount"
-        android:layout_width="372dp"
-        android:layout_height="wrap_content"
-        android:textColor="#000000"
-        android:gravity="center"
-        android:text="i don't have any account, create one" />
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
