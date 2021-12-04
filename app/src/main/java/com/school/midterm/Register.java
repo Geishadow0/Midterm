@@ -1,144 +1,101 @@
 package com.school.midterm;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Looper;
-import android.util.Patterns;
+import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.google.android.material.snackbar.Snackbar;
-import com.google.android.material.textfield.TextInputLayout;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.textfield.TextInputEditText;
+import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
 public class Register extends AppCompatActivity {
-    //Declaration EditTexts
-    EditText editTextUsername;
-    EditText editTextEmail;
-    EditText editTextPassword;
 
-    //Declaration textInputLayout
-    TextInputLayout textInputLayoutUsername;
-    TextInputLayout textInputLayoutEmail;
-    TextInputLayout textInputLayoutPassword;
-
-    //Declaration Button
-    Button buttonRegister;
-
-    //Declaration SqliteHelper
-    SqliteHelper sqliteHelper;
-
+    TextInputEditText textInputEditTextFullname, textInputEditTextUsername, textInputEditTextPassword,textInputEditTextEmail;
+    Button buttonSignUp;
+    TextView textViewLogin;
+    ProgressBar progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        sqliteHelper = new SqliteHelper(this);
-        initTextViewLogin();
-        initViews();
 
-        buttonRegister.setOnClickListener(view -> {
-            if (validateUsername()&&validateEmail()&&validatePassword()) {
-                String UserName = editTextUsername.getText().toString();
-                String Email = editTextEmail.getText().toString();
-                String Password = editTextPassword.getText().toString();
-
-                //Check in the database is there any user associated with this email
-                if (!sqliteHelper.isEmailExists(Email)) {
-                    //Email does not exist now add new user to database
-                    sqliteHelper.addUser(new User(null, UserName, Email, Password));
-                    Snackbar.make(buttonRegister, "User created Succesfully! Please Login", Snackbar.LENGTH_LONG).show();
-                    new Handler(Looper.getMainLooper()).postDelayed(this::finish, Snackbar.LENGTH_LONG);
-                } else {
-                    //Email exist with email input provided so show error user already exist
-                    Snackbar.make(buttonRegister, "User already exist with same email ", Snackbar.LENGTH_LONG).show();
+        textInputEditTextUsername=findViewById(R.id.passwordLogin);
+        textInputEditTextFullname=findViewById(R.id.fullname);
+        textInputEditTextPassword=findViewById(R.id.password);
+        textInputEditTextEmail=findViewById(R.id.email);
+        buttonSignUp=findViewById(R.id.buttonSignUp);
+        textViewLogin=findViewById(R.id.textLogin);
+        progressBar=findViewById(R.id.progress);
+        
+        textViewLogin.setOnClickListener(new View.OnClickListener(){
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(Register.this, MainActivity.class);
+                        startActivity(intent);
                 }
             }
-            else{
-                Snackbar.make(buttonRegister,"Gagal Register", Snackbar.LENGTH_LONG).show();
+        );
+
+        buttonSignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String fullname, username, password, email;
+                fullname = String.valueOf(textInputEditTextFullname.getText());
+                username = String.valueOf(textInputEditTextUsername.getText());
+                password = String.valueOf(textInputEditTextPassword.getText());
+                email = String.valueOf(textInputEditTextEmail.getText());
+
+                if (!fullname.equals("") && !username.equals("") && !password.equals("") && !email.equals("")) {
+                    progressBar.setVisibility(View.VISIBLE);
+                    Handler handler = new Handler();
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            String[] field = new String[4];
+                            field[0] = "fullname";
+                            field[1] = "username";
+                            field[2] = "password";
+                            field[3] = "email";
+                            String[] data = new String[4];
+                            data[0] = fullname;
+                            data[1] = username;
+                            data[2] = password;
+                            data[3] = email;
+                            PutData putData = new PutData("http://192.168.0.120/login/signup.php", "POST", field, data);
+                            if (putData.startPut()) {
+                                if (putData.onComplete()) {
+                                    String result = putData.getResult();
+                                    progressBar.setVisibility(View.GONE);
+                                    if (result.equals("Sign Up Success")) {
+                                        Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
+                                        Intent intent = new Intent(Register.this, MainActivity.class);
+                                        startActivity(intent);
+                                        finish();
+                                    } else {
+                                        Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+                            }
+                        }
+                    });
+                } else {
+                    Toast.makeText(getApplicationContext(), "all fields are required", Toast.LENGTH_SHORT).show();
+                }
+
             }
-        });
-    }
-    //This method used to set Login TextView click event
-    private void initTextViewLogin(){
-        TextView textViewLogin = findViewById(R.id.textViewLogin);
-        textViewLogin.setOnClickListener(view -> finish());
-    }
-
-    //This method is used to connect XML views to its Objects
-    private void initViews() {
-        editTextEmail = findViewById(R.id.editTextEmail);
-        editTextPassword = findViewById(R.id.editTextPassword);
-        editTextUsername = findViewById(R.id.editTextUsername);
-        textInputLayoutEmail = findViewById(R.id.textInputLayoutEmail);
-        textInputLayoutPassword = findViewById(R.id.textInputLayoutPassword);
-        textInputLayoutUsername = findViewById(R.id.textInputLayoutUsername);
-        buttonRegister = findViewById(R.id.buttonRegister);
-    }
-
-    //This method is used to validate input given by user
-    private boolean validateUsername() {
-        boolean validuser;
-
-        //get values from Edittext fields
-        String Username = editTextUsername.getText().toString();
-
-        //Handling validation for UserName field
-        if (Username.isEmpty()) {
-            validuser = false;
-            textInputLayoutUsername.setError("Please enter valid username!");
-        }
-        else {
-            if (Username.length() >= 5) {
-                validuser = true;
-                textInputLayoutUsername.setError(null);
-            } else {
-                validuser = false;
-                textInputLayoutUsername.setError("Username is to Short!");
-            }
-        }
-        return validuser;
-    }
-
-    //This method is used to validate input email
-    private boolean validateEmail() {
-        boolean validemail;
-
-        //get values from Edittext fields
-        String Email = editTextEmail.getText().toString();
-
-        //Handling validation for UserName field
-        if (!Patterns.EMAIL_ADDRESS.matcher(Email).matches()) {
-            validemail = false;
-            textInputLayoutEmail.setError("Please enter valid email");
-        } else {
-            validemail = true;
-            textInputLayoutEmail.setError(null);
-        }
-        return validemail;
-    }
-
-    //Handling validation for password field
-    private boolean validatePassword(){
-        boolean validpass;
-
-        //Get values from EditText fields
-        String Password = editTextPassword.getText().toString();
-
-        //Handling validation for Password field
-        if (Password.isEmpty()) {
-            validpass = false;
-            textInputLayoutPassword.setError("Please enter valid password!");
-        } else {
-            if (Password.length() >= 5) {
-                validpass = true;
-                textInputLayoutPassword.setError(null);
-            } else {
-                validpass = false;
-                textInputLayoutPassword.setError("Password is to short!");
+                });
             }
         }
-        return validpass;
-    }
-}
+
+
+                
+
+
+
+

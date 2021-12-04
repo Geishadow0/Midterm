@@ -1,123 +1,86 @@
 package com.school.midterm;
 
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
-import android.text.Html;
-import android.text.Spanned;
+import android.os.Handler;
+import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
-import com.google.android.material.snackbar.Snackbar;
-import com.google.android.material.textfield.TextInputLayout;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.textfield.TextInputEditText;
+import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText editTextUsername;
-    EditText editTextPassword;
-    TextInputLayout textInputLayoutUsername;
-    TextInputLayout textInputLayoutPassword;
+    TextInputEditText  textInputEditTextUsername, textInputEditTextPassword;
     Button buttonLogin;
-    SqliteHelper sqliteHelper;
-
-    @RequiresApi(api = Build.VERSION_CODES.N)
+    TextView textViewSignup;
+    ProgressBar progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        sqliteHelper = new SqliteHelper(this);
-        initCreateAccountTextView();
-        initViews();
 
+        textInputEditTextUsername=findViewById(R.id.usernameLogin);
+        textInputEditTextPassword=findViewById(R.id.passwordLogin);
+        buttonLogin=findViewById(R.id.buttonLogin);
+        textViewSignup=findViewById(R.id.textSignup);
 
-        buttonLogin.setOnClickListener(view -> {
-            if (validateUsername()&&validatePassword()) {
+        textViewSignup.setOnClickListener(new View.OnClickListener(){
+                                             @Override
+                                             public void onClick(View v) {
+                                                 Intent intent = new Intent(MainActivity.this, Register.class);
+                                                 startActivity(intent);
+                                             }
+                                         }
+        );
 
-                String Username = editTextUsername.getText().toString();
-                String Password = editTextPassword.getText().toString();
+        buttonLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String username, password;
+                username = String.valueOf(textInputEditTextUsername.getText());
+                password = String.valueOf(textInputEditTextPassword.getText());
 
-                User currentUser = sqliteHelper.Authenticate(new User(null, Username, null, Password ));
-
-                if (currentUser != null) {
-                    Snackbar.make(buttonLogin, "Succesfully Logged in!", Snackbar.LENGTH_LONG).show();
-
-                    Intent intent = new Intent(MainActivity.this, HomeActivity.class);
-                    intent.putExtra("name",Username);
-                    startActivity(intent);
-                    finish();
+                if (!username.equals("") && !password.equals("")) {
+                    Handler handler = new Handler();
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            String[] field = new String[2];
+                            field[0] = "username";
+                            field[1] = "password";
+                            String[] data = new String[2];
+                            data[0] = username;
+                            data[1] = password;
+                            PutData putData = new PutData("http://192.168.0.120/login/login.php", "POST", field, data);
+                            if (putData.startPut()) {
+                                if (putData.onComplete()) {
+                                    String result = putData.getResult();
+                                    if (result.equals("Login Success")) {
+                                        Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
+                                        Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                                        intent.putExtra("name",username);
+                                        startActivity(intent);
+                                        finish();
+                                    } else {
+                                        Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+                            }
+                        }
+                    });
+                } else {
+                    Toast.makeText(getApplicationContext(), "all fields are required", Toast.LENGTH_SHORT).show();
                 }
-                else {
-                    Snackbar.make(buttonLogin, " Failed to log in, please try again", Snackbar.LENGTH_LONG).show();
-                }
+
             }
         });
-    }
-    @RequiresApi(api = Build.VERSION_CODES.N)
-    private void initCreateAccountTextView() {
-        TextView textViewCreateAccount = findViewById(R.id.textViewCreateAccount);
-        textViewCreateAccount.setText(fromhtml());
-        textViewCreateAccount.setOnClickListener(view -> {
-            Intent intent = new Intent(MainActivity.this, Register.class);
-            startActivity(intent);
-        });
-    }
 
-    private void initViews() {
-        editTextUsername = findViewById(R.id.editTextUsername);
-        editTextPassword = findViewById(R.id.editTextPassword);
-        textInputLayoutUsername = findViewById(R.id.textInputLayoutUsername);
-        textInputLayoutPassword = findViewById(R.id.textInputLayoutPassword);
-        buttonLogin = findViewById(R.id.buttonLogin);
-    }
 
-    @RequiresApi(api = Build.VERSION_CODES.N)
-    private static Spanned fromhtml() {
-        Spanned result;
-        result = Html.fromHtml("<font color='#0c0099'> I don't have account yet, </font>" +
-                "<font color='#0c0099'>create one</font", Html.FROM_HTML_MODE_LEGACY);
-        return result;
-    }
-
-    private boolean validateUsername() {
-        boolean validuser;
-
-        String Username = editTextUsername.getText().toString();
-
-        if (Username.isEmpty()) {
-            validuser = false;
-            textInputLayoutUsername.setError("Please enter valid username!");
-        }
-        else {
-            if (Username.length() >= 5) {
-                validuser = true;
-                textInputLayoutUsername.setError(null);
-            } else {
-                validuser = false;
-                textInputLayoutUsername.setError("Username is to Short!");
-            }
-        }
-        return validuser;
-    }
-    private boolean validatePassword(){
-        boolean validpass;
-
-        String Password = editTextPassword.getText().toString();
-
-        //Handling validation for Password field
-        if (Password.isEmpty()) {
-            validpass = false;
-            textInputLayoutPassword.setError("Please enter valid password!");
-        } else {
-            if (Password.length() >= 5) {
-                validpass = true;
-                textInputLayoutPassword.setError(null);
-            } else {
-                validpass = false;
-                textInputLayoutPassword.setError("Password is to short!");
-            }
-        }
-        return validpass;
     }
 }

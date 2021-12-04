@@ -99,5 +99,13 @@
     <string name="address">Address: 1600 Pennsylvania Ave NW, Washington, DC 20500–0003, United States</string>
     <string name="texthome_con">Contact Us</string>
     <string name="logout">Logout</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="Login">Login</string>
+    <string name="signup">Signup</string>
+    <string name="fullname">Full Name</string>
+    <string name="loginhere">Already have an account? <u>Login here</u></string>
+    <string name="account">Create a new account? <u>Sign up here</u></string>
 
 </resources>
