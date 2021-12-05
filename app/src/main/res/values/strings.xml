@@ -108,4 +108,9 @@
     <string name="loginhere">Already have an account? <u>Login here</u></string>
     <string name="account">Create a new account? <u>Sign up here</u></string>
 
+
+
+    <string name="database_login">http://192.168.0.120/login/login.php</string>
+    <string name="database_signup">http://192.168.0.120/login/signup.php</string>
+
 </resources>
