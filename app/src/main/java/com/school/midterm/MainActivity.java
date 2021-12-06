@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     TextInputEditText  textInputEditTextUsername, textInputEditTextPassword;
     Button buttonLogin;
     TextView textViewSignup;
-    ProgressBar progressBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
